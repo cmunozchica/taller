@@ -1,0 +1,637 @@
+https://cdn0.iconfinder.com
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+    // $background: #fcfcfc;
+// $subItemHover: #efefef;
+// $borderLineColor: #dee2e6;
+
+$background: #fff;
+
+$subItemBg: #fcfcfc;
+$subItemHover: #efefef;
+
+$borderLineColor: #dee2e6;
+$borderLineColorStrong: #c9c9c9;
+
+$navItemBg: $subItemBg;
+$navLinkColor: #333333;
+
+$primaryColor: #343a40;
+
+$md: 800px;
+$borderRadiusStrong: 15px;
+
+body{
+  background: $background;
+}
+
+.sub-navbar{
+  width: 100%;
+  display: flex;
+  flex-wrap: no-wrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  align-items: center;
+}
+
+.sub-item{
+  height: 80px;
+  width: 100px;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  flex-grow: 0;     /* do not grow   - initial value: 0 */
+  flex-shrink: 0;   /* do not shrink - initial value: 1 */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  img.icon{
+    flex: 1;
+    height: 40px;
+    width: 40px;
+  }
+
+  .description{
+    flex: 1;
+  }
+}
+
+.sub-item:hover{
+  background: $subItemHover !important;
+}
+
+.sub-item.active{
+  background: $subItemHover !important;
+}
+
+
+#empresa-navbar-select .form-control{
+  min-width: 160px;
+}
+
+#empresa-navbar-select{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.form-content-tab{
+  background: #FFF;
+  border: solid 1px;
+  border-color: #fff $borderLineColor $borderLineColor $borderLineColor;
+}
+
+.card-content{
+  border:solid 1px $borderLineColor;
+  padding: 10px;
+  border-radius: 3px;
+  background: white;
+}
+
+.btn--filter{
+  cursor:pointer;
+}
+
+.list-action{
+  display:flex;
+  border-bottom: solid 1px $borderLineColor;
+  margin-bottom: 20px;
+  
+  .action-button{
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    opacity: 0.3;
+    cursor: auto;
+    
+    &:hover{
+      background: $subItemHover;
+    }
+    
+    &.active{
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+  
+  .action-button img{
+    height: 30px;
+  }
+}
+
+// Override boostrap
+
+.nav-tabs{
+  
+  @media screen and (max-width: $md){
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav-item{
+    background: $navItemBg !important;
+    
+    @media screen and (max-width: $md){
+      border-top: solid 1px white;
+    }
+  }
+  
+  .nav-item:nth-child(1){
+    border-top: none;
+  }
+  
+  .nav-link{
+    color: $navLinkColor;
+  }
+}
+
+
+/*
+ *  Scrollbar
+ */
+
+.c-scroll::-webkit-scrollbar-track
+{
+	background-color: #FFFF;
+  height: 3px;
+}
+
+.c-scroll::-webkit-scrollbar
+{
+	height: 3px;
+	background-color: #FFFF;
+}
+
+.c-scroll::-webkit-scrollbar-thumb
+{
+	background-color: $primaryColor;
+  height: 3px;
+}
+
+table{
+  margin-bottom: 0 !important;
+  
+  th, td {
+      white-space: nowrap;
+  }
+  
+  .table-btn{
+    border:none;
+  }
+}
+
+.btn{
+  border-radius: 0 !important;
+}
+
+.navbar{
+  padding: .1rem 1rem;
+  
+.form-control{
+    height: 30px;
+    font-size: 12px;
+  }
+}
+
+.btn{
+    border-radius: 5px !important;
+}
+
+.btn-dark{
+  border: solid 1px #232528;
+}
+</style>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">MP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#"  role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cadastro
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Clientes</a>
+          <a class="dropdown-item" href="#">Cidades</a>
+          <a class="dropdown-item" href="#">Logradouros</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Bens</a>
+          <a class="dropdown-item" href="#">Comissionados</a>
+          <a class="dropdown-item" href="#">Empresas</a>
+          <a class="dropdown-item" href="#">Obras/Empreendimentos</a>
+          <a class="dropdown-item" href="#">Veículos</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Moedas</a>
+          <a class="dropdown-item" href="#">Cotacão Moeda (índice)</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Usuários</a>
+        </div>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Custos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Imóveis</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Financerio</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Águas</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Relatórios</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Configurações</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Ajuda</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sair</a>
+      </li>
+    </ul>
+    <div class="form-group" id="empresa-navbar-select">
+      <select class="form-control">
+        <option>Empresa X</option>
+        <option>Empresa Y</option>
+        <option>Empresa Z</option>
+        <option>Empresa K</option>
+        <option>Empresa H</option>
+      </select>
+    </div>
+  </div>
+</nav>
+
+<div class="sub-navbar c-scroll">
+  <div class="sub-item active">
+    <img class="icon" src="https://cdn1.iconfinder.com/data/icons/IconsLandVistaPeopleIconsDemo/256/Person_Undefined_Male_Light.png" alt="Clientes">
+    <span class="description">Clientes</span>
+  </div>
+  
+  <div class="sub-item">
+    <img class="icon" src="https://cdn4.iconfinder.com/data/icons/REALVISTA/accounting/png/400/truck.png" alt="Fornecedor">
+    <span class="description">Fornecedor</span>
+  </div>
+  
+  <div class="sub-item">
+    <img class="icon" src="https://cdn0.iconfinder.com/data/icons/shop_icons/256/cart.png" alt="Compras">
+    <span class="description">Compras</span>
+  </div>
+  
+  <div class="sub-item">
+    <img class="icon" src="http://icons.iconarchive.com/icons/aha-soft/large-business/256/Cash-register-icon.png" alt="Caixa">
+    <span class="description">Caixa</span>
+  </div>
+  
+  <div class="sub-item">
+    <img class="icon" src="http://icons.iconarchive.com/icons/artdesigner/urban-stories/256/House-icon.png" alt="Imóveis">
+    <span class="description">Imóveis</span>
+  </div>
+  
+  <div class="sub-item">
+    <img class="icon" src="http://icons.iconarchive.com/icons/treetog/junior/256/folder-documents-icon.png" alt="Contrato">
+    <span class="description">Contrato</span>
+  </div>
+  
+  <div class="sub-item">
+    <img class="icon" src="https://layout.marinaparkrs.site/icones/remessa.png" alt="Remessa">
+    <span class="description">Remessa</span>
+  </div>
+</div>
+
+<div class="container mt-3" id="app">
+  <div class="row mb-3" v-if="formList">
+    <div class="col-md-12 d-flex flex-row-reverse">
+      <button type="button" class="btn btn-sm btn-dark" @click="toggleRoute">Cadastrar</button>
+    </div>
+  </div>
+  <div class="card-content animated fadeIn" v-if="formList">
+    <form class="mb-1">
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+      <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-filter"></i></span>
+        </div>
+        <input type="text" class="form-control form-control-sm" id="validationCustomUsername" placeholder="Filtrar" aria-describedby="inputGroupPrepend" required>
+      <div class="input-group-append">
+          <span class="input-group-text btn--filter">Filtrar</span>
+        </div>
+          </div>
+    </div>
+      </div>
+    </form>
+
+    <div class="table-responsive-xl">
+      <table class="table table-sm table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome do Cliente</th>
+          <th scope="col">CPF / CNPJ</th>
+          <th scope="col">Contato</th>
+          <th scope="col">Data Nascimento</th>
+          <th scope="col">Email</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Raphael kieling</td>
+          <td>033.740.290-60</td>
+          <td>(51) 99412-1300</td>
+          <td>23/05/1998</td>
+          <td>raphaelkieling@gmail.com</td>
+          <td>
+            <div class="dropdown">
+              <button class="table-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Editar</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Deletar</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+        <tr>
+          <th scope="row">2</th>
+          <td>Lucas Saraiva</td>
+          <td>98.786.753/0001-79</td>
+          <td>(51) 9851-5151</td>
+          <td>23/05/1998</td>
+          <td>lucassairava@gmail.com</td>
+          <td>
+            <div class="dropdown">
+              <button class="table-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Editar</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Deletar</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Lucas Saraiva</td>
+          <td>98.786.753/0001-79</td>
+          <td>(51) 9851-5151</td>
+          <td>23/05/1998</td>
+          <td>lucassairava@gmail.com</td>
+          <td>
+            <div class="dropdown">
+              <button class="table-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Editar</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Deletar</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Lucas Saraiva</td>
+          <td>98.786.753/0001-79</td>
+          <td>(51) 9851-5151</td>
+          <td>23/05/1998</td>
+          <td>lucassairava@gmail.com</td>
+          <td>
+            <div class="dropdown">
+              <button class="table-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Editar</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Deletar</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Lucas Saraiva</td>
+          <td>98.786.753/0001-79</td>
+          <td>(51) 9851-5151</td>
+          <td>23/05/1998</td>
+          <td>lucassairava@gmail.com</td>
+          <td>
+            <div class="dropdown">
+              <button class="table-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Editar</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Deletar</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Lucas Saraiva</td>
+          <td>98.786.753/0001-79</td>
+          <td>(51) 9851-5151</td>
+          <td>23/05/1998</td>
+          <td>lucassairava@gmail.com</td>
+          <td>
+            <div class="dropdown">
+              <button class="table-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Editar</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Deletar</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Lucas Saraiva</td>
+          <td>98.786.753/0001-79</td>
+          <td>(51) 9851-5151</td>
+          <td>23/05/1998</td>
+          <td>lucassairava@gmail.com</td>
+          <td>
+            <div class="dropdown">
+              <button class="table-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Editar</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Deletar</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Lucas Saraiva</td>
+          <td>98.786.753/0001-79</td>
+          <td>(51) 9851-5151</td>
+          <td>23/05/1998</td>
+          <td>lucassairava@gmail.com</td>
+          <td>
+            <div class="dropdown">
+              <button class="table-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Editar</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Deletar</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Lucas Saraiva</td>
+          <td>98.786.753/0001-79</td>
+          <td>(51) 9851-5151</td>
+          <td>23/05/1998</td>
+          <td>lucassairava@gmail.com</td>
+          <td>
+            <div class="dropdown">
+              <button class="table-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Editar</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Deletar</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      <tbody>
+        <tr>
+          <th scope="row">3</th>
+          <td>Marina Park</td>
+          <td>033.740.290-60</td>
+          <td>(51) 99412-1300</td>
+          <td>23/05/1998</td>
+          <td>mm@suporte.com</td>
+          <td>
+            <div class="dropdown">
+              <button class="table-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Editar</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Deletar</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  
+  <div v-if="formView" class="animated fadeIn">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" :class="{active: true}" href="#">Informações básicas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" :class="{active: false}" href="#">Informações pessoais</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" :class="{active: false}" href="#">Endereços</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" :class="{active: false}" href="#">Histórico</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" :class="{active: false}" href="#">Contas</a>
+      </li>
+    </ul>
+  
+    <div class="form-content-tab">
+     <form class="p-3">
+     <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="inputEmail4">Código</label>
+        <input type="text" disabled class="form-control form-control-sm" placeholder="XXXXX">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputPassword4">Nome</label>
+        <input type="text" class="form-control form-control-sm" placeholder="Nome">
+      </div>
+      <div class="form-group col-md-3">
+        <label>Tipo</label>
+        <select class="form-control form-control-sm">
+          <option>Pessoa Física</option>
+          <option>Pessoa Jurídica</option>
+        </select>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputPassword4">CPF/CNPJ</label>
+        <input type="password" class="form-control form-control-sm" placeholder="000.000.000-00">
+      </div>
+    </div>
+       
+     <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputAddress">Fone Residêncial</label>
+        <input type="text" class="form-control form-control-sm" placeholder="XX XXXX-XXXX">
+      </div>
+       
+      <div class="form-group col-md-4">
+        <label for="inputAddress">Fone Residêncial</label>
+        <input type="text" class="form-control form-control-sm" placeholder="XX XXXX-XXXX">
+      </div>
+       
+      <div class="form-group col-md-4">
+        <label for="inputAddress">Fone Residêncial</label>
+        <input type="text" class="form-control form-control-sm" placeholder="XX XXXX-XXXX">
+      </div> 
+     </div>
+    <hr>
+    <span @click="toggleRoute()" class="btn btn-sm btn-outline-secondary">Cancelar</span>
+    <span @click="save()" class="btn btn-sm btn-dark">Salvar</span>
+       
+       <div v-if="clienteSalvo" class="alert alert-success mt-3" role="alert">
+        Cliente salvo com sucesso!
+      </div>
+  </form>
+  </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

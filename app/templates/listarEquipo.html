@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card-body">
+    <p></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 search">
+                <form action="" method="get">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
+                        <span class="input-group-list">
+                            <i class="icon icon-search"></i>
+                            <button type="submit" class="boton btn-success">Buscar</button>
+
+                        </span>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <hr class="mt-2 mb-2">
+<h4>Lista de equipos</h4>
+<hr class="mt-2 mb-2">
+    
+    <table class="table" border="2">
+        <tr>
+            <th scope="col"> ID </th>  
+            <th scope="col"> SERIE </th>
+            <th scope="col"> MARCA </th>
+            <th scope="col"> MODELO </th>
+            <th scope="col"> ACCESORIOS </th>
+            <th scope="col"> CONTADOR </th>
+          
+        </tr>
+        {%if equipo_context%}
+        {%for equipo in equipo_context%}
+        <tr>
+            <td> {{ equipo.id }} </td>
+            <td> {{ equipo.serie }} </td>
+            <td> {{ equipo.marca}} </td>
+            <td> {{ equipo.modelo }} </td>
+            <td> {{ equipo.accesorio }} </td>
+            <td> {{ equipo.contador }} </td>
+            <td><a type="button" class="btn btn-warning" href="/equipo-update/{{ equipo.id }}">Actualizar</a></td>
+        </tr>
+        {% endfor %}
+        {%else%}
+            <h1>No hay registros de equipos</h1>
+        {%endif%}
+
+        
+    </table>
+    <div>{% include 'paginator.html' %}</div>
+    <a type="button" class="btn btn-success" href="{%url 'equipo-create' %}">Crear un nuevo equipo</a>
+    <br>
+</div>
+ 
+
+
+{% endblock %}    
+
+ 

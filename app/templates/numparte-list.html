@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card-body">
+    <p></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 search">
+                <form action="" method="get">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
+                        <span class="input-group-list">
+                            <i class="icon icon-search"></i>
+                            <button type="submit" class="boton btn-success">Buscar</button>
+
+                        </span>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <hr class="mt-2 mb-2">
+    <h4>Lista de numeros de partes</h4>
+    <hr class="mt-2 mb-2">
+    <table class="table" border="2">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Numero de parte</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Actualizacion</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {%if numparte_context%}
+            {%for numparte in numparte_context%}
+            <tr>
+                <td>{{numparte.id}}</td>
+                <td>{{numparte.marca}}</td>
+                <td>{{numparte.modelo}}</td>
+                <td>{{numparte.numero_parte}}</td>
+                <td>{{numparte.descripcion}}</td>
+                
+             
+                <td><a type="button" class="btn btn-warning" href="/parte-update/{{ numparte.id }}">Actualizar</a></td>
+
+
+            </tr>
+            {% endfor %}
+            {%else%}
+            <h1>No hay registro de ese numero de parte</h1>
+            {%endif%}
+        </tbody>
+    </table>
+    <div>{% include 'paginator.html' %}</div>
+    <a type="button" class="btn btn-success" href="{%url 'parte-create' %}">Crear nuevo numero de parte</a>
+
+</div>
+{% endblock %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte tecnico</title>
+</head>
+<style>
+    th {
+        background-color: rgb(206, 206, 231);
+        color: rgb(66, 37, 207);
+        height:30px;
+        font-size: 13px;
+        margin: 10px;
+        align-items: center;
+    }
+    td {
+        
+        color: rgb(6, 2, 22);
+        height:30px;
+        font-size: 10px;
+        margin: 6px;
+        align-items: left;
+    }
+    h1 {
+        color: blue;
+        font-size: 26px;
+    }
+
+
+    
+</style>
+<body>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-4" >
+                <h6 style="text-align: right;">Cantidad tecnicos : {{ count }}</h6>
+            </div>
+            <div class="col-sm-4">
+                <img class="logo" src="/apptaller/static/media/logo.png" class="rounded float-left" alt="logo">
+            </div>
+            <div class="col-sm-4">
+                <h1 style="text-align: center;">Lista de tecnicos</h1>
+            </div>
+
+        </div>
+         <hr>
+    
+    
+        <table class="table table-stripped table-bordered table-hover table-striped" width="200%" border="1">
+            <thead>
+                <tr>
+                    
+                    <th  scope="col">Cedula</th>
+                    <th  scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th  scope="col">Cargo</th>
+                    <th  scope="col">Celular</th>
+                    <th  scope="col">Correo</th>
+                    <th  scope="col">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+              {%if tecnico_context%}
+              {%for i in tecnico_context%}
+                <tr>
+                    
+                    <td>{{i.cedula}}</td>
+                    <td>{{i.nombre}}</td>
+                    <td>{{i.apellido}}</td>
+                    <td>{{i.cargo}}</td>
+                    <td>{{i.celular}}</td>
+                    <td>{{i.correo}}</td>
+                    <td>{{i.estado}}</td>
+                    
+                </tr>
+              {% endfor %}
+              {%else%}
+                  <h1>No hay registros de técnicos</h1>
+              {%endif%}
+            </tbody>
+        </table>   
+    
+    </div>
+    
+</body>
+</html>

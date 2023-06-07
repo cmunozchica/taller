@@ -1,0 +1,153 @@
+.header {
+    font-family: "Times New Roman", Times, serif;
+    background-color:rgb(78, 216, 195);
+    color:white;
+    text-align:center;
+    padding:2px;
+}
+
+.body {
+    background-image: url("/app/static/media/fondo1.jpg") !important ;
+
+    background-repeat: no-repeat;
+}
+
+.container {
+    background-color: rgb(206, 211, 210);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1em;
+    margin: 10px;
+    align-items: left;
+}
+
+
+
+.form-row {
+    font-family: "Lucida Console", "Courier New", monospace;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: left;
+  }
+  
+.form-row input {
+
+    display: block; 
+  }
+
+.form-row select {
+    display: block; 
+  }
+
+.form-row textarea {
+    display: block; 
+  }
+
+.form-row button {
+    padding: 0.5em 1em;
+    border: none;
+    background: rgb(100, 200, 255);
+    cursor: pointer;
+  }
+
+.footer {
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color:rgb(78, 216, 195);
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+    width:100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.a {
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.h1 {
+    font-size: 5px;
+}
+
+ul {
+    font-family: "Lucida Console", "Courier New", monospace;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+    background-color: #bfc8cd;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #68e284;
+}
+
+button {
+    color: #0099CC;
+    background: transparent;
+    border: 2px solid #0099CC;
+    border-radius: 6px;
+    padding: 5px 32px;
+}
+
+.form-upload {
+    background-color: #FFFFFF;
+    padding: 25px;
+}
+
+.table-upload {
+    width: 100%; 
+    text-align: center;
+    margin-top: 25px;
+    padding: 25px;
+    background-color: #FFFFFF;
+}
+
+.table-upload tr td {
+    padding-top: 5px;            
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 20%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 4px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  img.icon{
+    flex: 1;
+    height: 40px;
+    width: 40px;
+  }

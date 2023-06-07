@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card-body">
+    <p></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 search">
+                <form action="" method="get">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
+                        <span class="input-group-list">
+                            <i class="icon icon-search"></i>
+                            <button type="submit" class="boton btn-success">Buscar</button>
+
+                        </span>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <hr class="mt-2 mb-2">
+    <h4>Lista de partes en taller</h4>
+    <hr class="mt-2 mb-2">
+        
+    <table class="table" border="2">
+        <thead>
+            <tr>
+                <th scope="col"> ID </th>  
+                <th scope="col"> MARCA </th>
+                <th scope="col"> MODELO </th>
+                <th scope="col"> NUMERO DE PARTE </th>
+                <th scope="col"> SERIE </th>
+                <th scope="col"> DESCRIPCION </th>
+                <th scope="col"> FECHA </th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            {%if repuestotaller_context%}
+            {%for repuesto in repuestotaller_context%}
+            <tr>
+                <td> {{ repuesto.id }} </td>            
+                <td> {{ repuesto.marca}} </td>
+                <td> {{ repuesto.modelo }} </td>            
+                <td> {{ repuesto.numero_parte }} </td>
+                <td> {{ repuesto.serie }} </td>
+                <td> {{ repuesto.descripcion }} </td>
+                <td> {{ repuesto.fecha }} </td>
+                <td><a type="button" class="btn btn-warning" href="/equipo-update/{{ equipo.id }}">Actualizar</a></td>
+            </tr>
+            {% endfor %}
+            {%else%}
+            <h1>No hay tecnico registrado</h1>
+            {%endif%}
+        </tbody>
+    </table>
+        <div>{% include 'paginator.html' %}</div>
+        <a type="button" class="btn btn-success" href="{%url 'repuestotaller-create' %}">Crear un nuevo equipo</a>
+        <br>
+</div>
+{% endblock %}

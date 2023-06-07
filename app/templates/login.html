@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+            background-color: rgb(206, 211, 210);
+            width:1000px;
+            margin:100px auto;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;      
+        }
+        .button {
+            color: #0099CC;
+            background: transparent;
+            border: 2px solid #0099CC;
+            border-radius: 6px;
+            padding: 5px 38px;
+        }
+    </style>
+</head>
+<body class="body">
+    <div class='container'>
+        <form class="form-row" method="POST">
+            {% csrf_token %}
+            <hr class="mt-4 mb-4">
+            <h2>Ingrese sus credenciales</h2>
+            <hr class="mt-4 mb-4">
+            
+            <br>  
+            {{form.as_p}}
+            <p></p>
+                <div> 
+                                
+            <br>
+            <br>  
+            </div class="form-group col-md-2">
+            <input type="submit" class="btn btn-success btn-xs" value="Ingresar" style='BORDER: rgb(10, 9, 9) 1px solid; FONT-SIZE: 20pt; FONT-FAMILY: Verdana;padding: 5px 32px; border-radius: 6px; background: transparent;
+            BACKGROUND-COLOR: rgb(149, 147, 179)'>
+                    <br>
+    
+        </form>
+    
+    </div>
+</body>
+</html>
+

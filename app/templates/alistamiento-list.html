@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card-body">
+    <p></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 search">
+                <form action="" method="get">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
+                        <span class="input-group-list">
+                            <i class="icon icon-search"></i>
+                            <button type="submit" class="boton btn-success">Buscar</button>
+
+                        </span>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <hr class="mt-2 mb-2">
+<h4>Lista de alistamiento</h4>
+<hr class="mt-2 mb-2">
+    
+    <table class="table" border="2">
+        <tr>
+            <th scope="col"> ID </th>  
+            <th scope="col"> SERIE </th>
+            <th scope="col"> MARCA </th>
+            <th scope="col"> MODELO </th>
+            <th scope="col"> ACCESORIOS </th>
+            <th scope="col"> CONTADOR </th>
+            <th scope="col"> ESTADO </th>
+            <th scope="col"> CREADO </th>
+            <th scope="col"> ACTUALIZADO </th>
+        </tr>
+        {%if alistamiento_context%}
+        {%for alistamiento in alistamiento_context%}
+        <tr>
+            <td> {{ alistamiento.id }} </td>
+            <td> {{ alistamiento.serie }} </td>
+            <td> {{ alistamiento.marca}} </td>
+            <td> {{ alistamiento.modelo }} </td>
+            <td> {{ alistamiento.accesorio }} </td>
+            <td> {{ alistamiento.contador }} </td>
+            <td> {{ alistamiento.estado }} </td>
+            <td> {{ alistamiento.created }} </td>
+            <td> {{ alistamiento.update }} </td>
+            <td><a type="button" class="btn btn-warning" href="/alistamiento-update/{{ alistamiento.id }}" >Actualizar</a></td>
+
+        </tr>
+        {% endfor %}
+        {%else%}
+            <h1>No hay registros de alistamiento</h1>
+        {%endif%}
+
+        
+    </table>
+    <div>{% include 'paginator.html' %}</div>
+    <hr>
+    <a type="button" class="btn btn-success" href="{%url 'alistamiento-create' %}">Crear un nuevo alistamiento</a>
+    <br>
+    <br>
+    </div>
+
+
+
+{% endblock %}  

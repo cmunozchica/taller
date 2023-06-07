@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    <form class="form-row" method="POST">
+        {% csrf_token %}
+        <hr class="mt-4 mb-4">
+        <h2>Ingreso de equipo</h2>
+        <hr class="mt-4 mb-4">
+        
+        <br>  
+        {{form.as_p}}
+        <p></p>
+            <div> 
+                            
+        <br>
+        <br>  
+        </div class="form-group col-md-2">
+        <input type="submit" class="btn btn-success btn-xs" value="Agregar equipo" style='BORDER: rgb(128,128,128) 1px solid; FONT-SIZE: 16pt; FONT-FAMILY: Verdana; 
+        BACKGROUND-COLOR: rgb(140, 131, 237)'>
+                <br>
+
+    </form>
+    <br>
+    <h4><a href="/equipo-list/">IR</a> /Lista de equipos</h4>
+</div>
+{% endblock %}

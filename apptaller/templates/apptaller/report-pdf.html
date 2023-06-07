@@ -1,0 +1,44 @@
+
+
+<div class="card-body">
+     
+    <h4 style="text-align: center;">Lista de trabajos</h4>
+    <h3>Cantidad trabajos: {{ count }}</h3>
+    <table class="table table-stripped table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Fecha de entrega</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Trabajo</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+          {%if trabajo_context%}
+          {%for trabajo in trabajo_context%}
+            <tr>
+                <td>{{trabajo.id}}</td>
+                <td>{{trabajo.cliente}}</td>
+                <td>{{trabajo.fecha}}</td>
+                <td>{{trabajo.fechaEntrega}}</td>
+                <td>{{trabajo.descripcion}}</td>
+                <td>{{trabajo.tipo}}</td>
+                <td>{{trabajo.tipoTrabajo}}</td>
+                <td>{{trabajo.estado}}</td>
+
+                
+            </tr>
+          {% endfor %}
+          {%else%}
+              <h1>No hay registros de trabajos</h1>
+          {%endif%}
+        </tbody>
+    </table>
+
+    
+
+</div>
